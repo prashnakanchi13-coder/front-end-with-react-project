@@ -1,0 +1,377 @@
+/* Reset and Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: ghostwhite;
+  color: midnightblue;
+  line-height: 1.5;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+/* Navbar */
+nav {
+  background-color: midnightblue;
+  color: white;
+  padding: 16px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+nav button {
+  background: none;
+  border: none;
+  color: lightgray;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+nav button:hover,
+nav button.active {
+  color: skyblue;
+}
+
+nav .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: skyblue;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+}
+
+/* Hero / Featured Section */
+.featured-card {
+  background-color: midnightblue;
+  color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+  .featured-card {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.featured-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.featured-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.badge {
+  display: inline-block;
+  background-color: royalblue;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: 4px;
+  width: fit-content;
+  margin-bottom: 8px;
+}
+
+/* Grid Layout for News Cards */
+.news-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 640px) {
+  .news-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .news-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Individual News Card */
+.news-card {
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.news-card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+
+.news-card-body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.news-card-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: slategray;
+  margin-bottom: 8px;
+}
+
+.news-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: darkslategrey;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.news-card-summary {
+  font-size: 14px;
+  color: dimgray;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.news-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: slategray;
+  padding-top: 8px;
+  border-top: 1px solid whitesmoke;
+}
+
+/* Controls (Search & Filters) */
+.controls-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+@media (min-width: 768px) {
+  .controls-bar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.search-input {
+  padding: 8px 12px;
+  border: 1px solid lightgray;
+  border-radius: 6px;
+  font-size: 14px;
+  width: 100%;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: royalblue;
+  box-shadow: 0 0 0 2px rgba(65, 105, 225, 0.2);
+}
+
+.category-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.category-btn {
+  padding: 5.6px 13.6px;
+  border-radius: 20px;
+  border: none;
+  font-size: 13.6px;
+  font-weight: 500;
+  cursor: pointer;
+  background-color: lightgray;
+  color: darkslategrey;
+  transition: all 0.2s ease;
+}
+
+.category-btn.active,
+.category-btn:hover {
+  background-color: royalblue;
+  color: white;
+}
+
+/* Buttons & Links */
+.btn-link {
+  background: none;
+  border: none;
+  color: royalblue;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.btn-link:hover {
+  text-decoration: underline;
+}
+
+/* Form Styling */
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid lightgray;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.btn-submit {
+  width: 100%;
+  background-color: royalblue;
+  color: white;
+  padding: 9.6px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-submit:hover {
+  background-color: darkblue;
+}
+
+/* Footer */
+footer {
+  background-color: midnightblue;
+  color: lightgray;
+  text-align: center;
+  padding: 24px;
+  font-size: 14px;
+  margin-top: 48px;
+}
+
+.card {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 30px;
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 8px;
+}
+
+.card h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid lightgray;
+  padding-bottom: 8px;
+  color: black;
+}
+
+/* Stacks label ON TOP of input so they DO NOT overlap */
+.box {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+/* Label text */
+.box label {
+  font-weight: bold;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: darkslategrey;
+}
+
+.box input,
+.box textarea {
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.button {
+  width: 100%;
+  padding: 12px;
+  background-color: dodgerblue;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: blue;
+}
+
+.message {
+  background-color: lightgreen;
+  color: darkgreen;
+  padding: 15px;
+  border-radius: 6px;
+  font-weight: bold;
+}
